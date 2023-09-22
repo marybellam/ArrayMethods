@@ -228,11 +228,11 @@ public class ArrayMethodsTest {
     @Test
     public void count(){
         boolean[] arr1 = {false, true, true, false, true};
-        assertEquals("[false, true, true, false, true] -> 3", 3f, ArrayMethods.count(arr1), 1e-6);
+        assertEquals("[false, true, true, false, true] -> 3", 3, ArrayMethods.count(arr1), 1e-6);
         boolean[] arr2 = {true, true, true, false, true};
-        assertEquals("[true, true, true, false, true] -> 4", 4f, ArrayMethods.count(arr2), 1e-6);
+        assertEquals("[true, true, true, false, true] -> 4", 4, ArrayMethods.count(arr2), 1e-6);
         boolean[] arr3 = {false, false, false, false, false};
-        assertEquals("[false, false, false, false, false] -> 0", 0f, ArrayMethods.count(arr3), 1e-6);
+        assertEquals("[false, false, false, false, false] -> 0", 0, ArrayMethods.count(arr3), 1e-6);
     }
 
     @Test

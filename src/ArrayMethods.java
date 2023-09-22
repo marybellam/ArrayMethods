@@ -5,7 +5,6 @@ public class ArrayMethods{
         for (int i =0;i<arr.length;i++){
                 total += arr[i];
             }
-            System.out.print(total);
             return total;
         }
 
@@ -14,7 +13,6 @@ public class ArrayMethods{
             for(int i = lo;i<=hi-1;i++){
                 total += arr[i];
             }
-            System.out.print(total);
             return total;
         }
 
@@ -23,7 +21,6 @@ public class ArrayMethods{
         for(int i = 0;i<=arr.length-1;i++){
             total += arr[i];
         }
-        System.out.print(total);
         return total;
     }
 
@@ -34,7 +31,6 @@ public class ArrayMethods{
                 total += arr[i];
             }
         }
-        System.out.print(total);
         return total;
     }
 
@@ -45,7 +41,6 @@ public class ArrayMethods{
             total += arr[i];
             }
         }
-        System.out.print(total);
         return total;
     }
 
@@ -57,10 +52,8 @@ public class ArrayMethods{
             num+=1;
         }
         if(num == 0){
-            System.out.print(0.0);
             return 0f;
         }else{
-            System.out.print(total/num);
             return total/num;
         }
 
@@ -74,10 +67,8 @@ public class ArrayMethods{
             num+=1;
         }
         if(num == 0){
-            System.out.print(0.0);
             return 0f;
         }else{
-            System.out.print(total/num);
             return total/num;
         }
     }
@@ -93,10 +84,8 @@ public class ArrayMethods{
         }
 
         if(num == 0){
-            System.out.print(0.0);
             return 0f;
         }else{
-            System.out.print(total/num);
             return total/num;
         }
 
@@ -116,7 +105,6 @@ public class ArrayMethods{
             System.out.print(0.0);
             return 0f;
         }else{
-            System.out.print(total/num);
             return total/num;
         }
 
@@ -137,7 +125,6 @@ public class ArrayMethods{
                 min = arr[i];
             }
         }
-        System.out.print(min);
         return min;
     }
 
@@ -153,7 +140,6 @@ public class ArrayMethods{
                 min = arr[i];
             }
         }
-        System.out.print(min);
         return min;
     }
 
@@ -230,7 +216,6 @@ public class ArrayMethods{
                 max = arr[i];
             }
         }
-        System.out.print(max);
         return max;
     }
 
@@ -246,7 +231,6 @@ public class ArrayMethods{
                 max = arr[i];
             }
         }
-        System.out.print(max);
         return max;
     }
 
@@ -259,7 +243,6 @@ public class ArrayMethods{
                 equalArray[i] = false;
             }
         }
-        System.out.print(equalArray);
         return equalArray;
     }
 
@@ -272,7 +255,6 @@ public class ArrayMethods{
                 logicArray[i] = true;
             }
         }
-        System.out.print(logicArray);
         return logicArray;
     }
 
@@ -286,7 +268,6 @@ public class ArrayMethods{
                 greaterArray[i] = false;
             }
         }
-        System.out.print(greaterArray);
         return greaterArray;
     }
 
@@ -307,7 +288,6 @@ public class ArrayMethods{
                 betweenArray[i] = false;
             }
         }
-        System.out.print(betweenArray);
         return betweenArray;
     }
 
@@ -320,18 +300,16 @@ public class ArrayMethods{
                 logicalAndArray[i] = true;
             }
         }
-        System.out.print(logicalAndArray[1]);
         return logicalAndArray;
     }
 
-    public static float count(boolean[] arr){
-        float num =0;
+    public static int count(boolean[] arr){
+        int num =0;
         for(int i =0; i<=arr.length-1;i++){
             if(arr[i] == true){
                 num +=1;
             }
         }
-        System.out.print(num);
         return num;
     }
 
@@ -343,7 +321,6 @@ public class ArrayMethods{
                 break;
             }
         }
-        System.out.print(num);
         return num;
     }
 
@@ -362,10 +339,6 @@ public class ArrayMethods{
                 j++;
 
             }
-        }
-        System.out.print(findArray);
-        for(int o =0;o<=findArray.length-1;o++){
-            System.out.println(findArray[o]);
         }
         return findArray;
     }

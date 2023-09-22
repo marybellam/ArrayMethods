@@ -29,7 +29,7 @@ _____ 1 pt: missing data handled
 
 _____ 1 pts: `ClimateQueries` prints requested answers
 
-_____ 1 pts: remaining methods implemented & tested, named as requested
+___YES__ 1 pts: remaining methods implemented & tested, named as requested
 
 _____ 1 pts: `ClimateStudy` prints requested answers
 

@@ -46,23 +46,45 @@ public class ClimateQueries {
     //mean method
     //method inside method
 
+    boolean equalToArray[] = ArrayMethods.isEqualTo(tempArray,-9999.0f);
+    boolean correctEqualToArray[] = ArrayMethods.logicalNot(equalToArray);
+    float finalMean = ArrayMethods.mean(tempArray,correctEqualToArray);
+    int finalNum = ArrayMethods.count(correctEqualToArray);
+    float[] finalArray = new float[finalNum];
+    int lineTrack =0;
+    for(i=0;i<=correctEqualToArray.length-1;i++){
+        if(correctEqualToArray[i] == true){
+            finalArray[lineTrack] = tempArray[i];
+            lineTrack++;
+        }
+    }
+    
+    //wants us to fix min and max to work with indices
+    float averageMin = ArrayMethods.min(finalArray);
+    float averageMax = ArrayMethods.max(finalArray);
+
+    boolean datesInBetween[] =ArrayMethods.datesBetween(dateArray, "20230101", "20230131");
+    boolean compare[] = ArrayMethods.logicalAnd(datesInBetween,correctEqualToArray);
+    for(int j=0;j<=finalArray.length;j++){
+        if(compare[j] == true){
+            
+        }
+    }
+
+
     System.out.println("Source file: "+ filename);
-    System.out.print("Annual mean temperature: ");
-    ArrayMethods.mean(tempArray);
-    System.out.println(" degrees Celsius");
-    System.out.print("Minimum average daily temperature: ");
-    ArrayMethods.min(tempArray);
-    System.out.println(" degrees Celsius");
-    System.out.print("Maximum average daily temperature: ");
-    ArrayMethods.max(tempArray);
-    System.out.println(" degrees Celsius");
+    System.out.println("Annual mean temperature: " + finalMean +" degrees Celsius");
+    System.out.println("Minimum average daily temperature: " + averageMin +" degrees Celsius");
+    System.out.println("Maximum average daily temperature: " + averageMax +" degrees Celsius");
+    System.out.println("Mean temperature in January: " + averageMax +" degrees Celsius");
+    System.out.println("Mean temperature in July: " + averageMax +" degrees Celsius");
+
+
+   /** 
     //get indexes for dates to find the temperature within that month???
-    System.out.print("Mean temperature in January: ");
     ArrayMethods.mean(tempArray,0,31);
-    System.out.println(" degrees Celsius");
-    System.out.print("Mean temperature in July: ");
     ArrayMethods.mean(tempArray,181,212);
-    System.out.println(" degrees Celsius");
+/* */
 
 
     }
