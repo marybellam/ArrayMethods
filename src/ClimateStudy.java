@@ -5,7 +5,7 @@ public class ClimateStudy {
     /** The main method reads from a file and prints the contents. */
   public static void main(String[] args) {
     Scanner file = null;
-    String[] files = {"YUMA_2023.txt","YUMA_2022.txt","YUMA_2021"};
+    String[] files = {"YUMA_2023.txt","YUMA_2022.txt","YUMA_2021.txt","YUMA_2020.txt","YUMA_2019.txt","YUMA_2018.txt","YUMA_2017.txt","YUMA_2018.txt"};
 
     for(int i =0;i<=files.length-1;i++){
     try {
