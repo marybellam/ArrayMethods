@@ -11,19 +11,19 @@ your work, please indicate the status of each item
 
 Assignment Points:
 
-_____ 1 pt: `wholeArraySum` written & tested
+___YES__ 1 pt: `wholeArraySum` written & tested
 
-_____ 1 pt: `sum` written and tested (all versions)
+___YES__ 1 pt: `sum` written and tested (all versions)
 
-_____ 1 pt: `mean` written and tested
+___YES__ 1 pt: `mean` written and tested
 
 _____ 1 pt: `min` and `max` written and tested
 
 _____ 1 pt: `lowest` and `highest` written and tested
 
-_____ 1 pts: data read from file into array of float
+__YES___ 1 pts: data read from file into array of float
 
-_____ 1 pts: `isGreaterThan` and `mean` with indicators written & tested
+___YES__ 1 pts: `isGreaterThan` and `mean` with indicators written & tested
 
 _____ 1 pt: missing data handled
 
@@ -58,4 +58,4 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
 _____ 1 pt: All required files included with submission (including completed checklist file)
 
-_____ 1 pt: readme.md contains your reflection on the assignment
+__YES___ 1 pt: readme.md contains your reflection on the assignment

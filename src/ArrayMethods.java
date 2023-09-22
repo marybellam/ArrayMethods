@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class ArrayMethods{
     public static float wholeArraySum(float[] arr) {
@@ -23,6 +22,28 @@ public class ArrayMethods{
         float total =0f;
         for(int i = 0;i<=arr.length-1;i++){
             total += arr[i];
+        }
+        System.out.print(total);
+        return total;
+    }
+
+    public static float sum(float[] arr,boolean[] ind){
+        float total =0f;
+        for(int i = 0;i<=arr.length-1;i++){
+            if(ind[i] == true){
+                total += arr[i];
+            }
+        }
+        System.out.print(total);
+        return total;
+    }
+
+    public static float sum(float[] arr,boolean[] ind,int lo,int hi){
+        float total =0f;
+        for(int i = lo;i<=hi-1;i++){
+            if(ind[i] == true){
+            total += arr[i];
+            }
         }
         System.out.print(total);
         return total;
@@ -61,6 +82,46 @@ public class ArrayMethods{
         }
     }
 
+    public static float mean(float[] arr, boolean[] arr2){
+        float total =0f;
+        float num =0;
+        for(int i = 0;i<=arr.length-1;i++){
+            if(arr2[i] == true){
+                total += arr[i];
+                num+=1;
+            }
+        }
+
+        if(num == 0){
+            System.out.print(0.0);
+            return 0f;
+        }else{
+            System.out.print(total/num);
+            return total/num;
+        }
+
+    }
+
+    public static float mean(float[] arr, boolean[] arr2, int lo, int hi){
+        float total =0f;
+        float num =0;
+        for(int i = lo;i<=hi-1;i++){
+            if(arr2[i] == true){
+                total += arr[i];
+                num+=1;
+            }
+        }
+
+        if(num == 0){
+            System.out.print(0.0);
+            return 0f;
+        }else{
+            System.out.print(total/num);
+            return total/num;
+        }
+
+    }
+
     public static float min(float[] arr, int lo, int hi){
         float min ;
         if( hi == lo){
@@ -75,8 +136,6 @@ public class ArrayMethods{
             if(arr[i]<min){
                 min = arr[i];
             }
-            System.out.print(min);
-
         }
         System.out.print(min);
         return min;
@@ -97,6 +156,63 @@ public class ArrayMethods{
         System.out.print(min);
         return min;
     }
+
+    /*public static float min(float[] arr, boolean[] arr2){
+        float min ;
+        int count =0;
+        for(int i=0;i<=arr.length-1;i++){
+            if(arr2[i]==true){
+                count++;
+            }
+        }
+        if(count == 0){
+            return Float.NaN;
+        }
+        
+        if( arr.length == 0){
+            return Float.NaN;
+        }else{
+            min = arr[0];
+        }
+        
+        for(int i =0; i<=arr.length-1;i++){
+            if(arr2[i]==true && arr[i]<min){
+                min = arr[i];
+            }
+        }
+        System.out.print(min);
+        return min;
+    }
+
+    public static float min(float[] arr, boolean[] arr2, int lo, int hi){
+        float min;
+        int count =0;
+        if( hi == lo){
+            return Float.NaN;
+        }
+        for(int i=lo;i<=hi-1;i++){
+            if(arr2[i]==true){
+                count++;
+            }
+        }
+        if(count == 0){
+            return Float.NaN;
+        }
+        if(arr.length == 0){
+            min = Float.NaN;
+        }else{
+            min = arr[lo];
+        }
+        for(int i = lo; i<=hi-1;i++){
+            if(arr2[i] == true){
+            if(arr[i]<min){
+                min = arr[i];
+            }
+        }
+        }
+        System.out.print(min);
+        return min;
+    } */
 
     public static float max(float[] arr, int lo, int hi){
         float max;
@@ -160,25 +276,6 @@ public class ArrayMethods{
         return logicArray;
     }
 
-    public static float mean(float[] arr, boolean[] arr2, int lo, int hi){
-        float total =0f;
-        float num =0;
-        for(int i = lo;i<=hi-1;i++){
-            if(arr2[i] == true){
-                total += arr[i];
-                num+=1;
-            }
-        }
-
-        if(num == 0){
-            System.out.print(0.0);
-            return 0f;
-        }else{
-            System.out.print(total/num);
-            return total/num;
-        }
-
-    }
 
     public static boolean[] isGreaterThan(float arr[], float num){
         boolean[] greaterArray = new boolean[arr.length];
@@ -275,7 +372,8 @@ public class ArrayMethods{
 
 
     public static void main(String[] arg){
-        boolean[] arr1 = {false, true, true, false, true};
-        find(arr1);
+        float [] arr8 = {1f, 2f, 3f, 4f};
+        boolean[] arr14 = {false,false,false,false};
+       // min(arr8,arr14,2,4);
     }
 }
