@@ -41,6 +41,10 @@ public class ClimateQueries {
             i++;
         }
     file.close();
+    //isequalto-band number
+    //use logical not
+    //mean method
+    //method inside method
 
     System.out.println("Source file: "+ filename);
     System.out.print("Annual mean temperature: ");
@@ -60,6 +64,6 @@ public class ClimateQueries {
     ArrayMethods.mean(tempArray,181,212);
     System.out.println(" degrees Celsius");
 
-    
+
     }
 }

@@ -165,9 +165,9 @@ public class ArrayMethodsTest {
     }
 
     @Test
-    public void find(){
+    public void findTest(){
         boolean[] arr1 = {false, true, true, false, true};
-        assertArrayEquals(new float[] {1f,2f,4f},ArrayMethods.find(arr1));
+        assertArrayEquals(new int[] {1,2,4},ArrayMethods.find(arr1));
     }
 
         

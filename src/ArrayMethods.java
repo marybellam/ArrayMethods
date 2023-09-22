@@ -250,14 +250,14 @@ public class ArrayMethods{
         return num;
     }
 
-    public static float[] find(boolean[] arr){
+    public static int[] find(boolean[] arr){
         int num =0;
         for(int i =0; i<=arr.length-1;i++){
             if(arr[i] == true){
                 num +=1;
             }
         }
-        float[] findArray = new float[num];
+        int[] findArray = new int[num];
         int j=0;
         for(int l =0; l<=arr.length-1;l++){
             if(arr[l] == true){
