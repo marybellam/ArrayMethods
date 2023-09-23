@@ -1,8 +1,13 @@
 import org.junit.*;
 import static org.junit.Assert.*;
-
+/**
+ * Class with all the tests for the arrays
+ */
 public class ArrayMethodsTest {
 
+    /**
+     * Test for the wholeArraySum method - finds the sum of the elements in an array
+     */
     @Test
     public void testWholeArraySum() {
         float[] arr1 = { 1f, 2f, 3f, 4f };
@@ -19,6 +24,9 @@ public class ArrayMethodsTest {
         assertEquals("[6 10 10 20] -> 46", 46f, ArrayMethods.wholeArraySum(arr6), 1e-6);
         }
 
+    /**
+     * Tests for the sum method - finds the sum of the elements in an array
+     */
     @Test
     public void sum() {
         float[] arr1 = { 1f, 2f, 3f, 4f };
@@ -78,6 +86,9 @@ public class ArrayMethodsTest {
         assertEquals("[6 10.5 -5 2f] [false false false false] -> 0", 0f, ArrayMethods.sum(arr21,arr31,2,4), 1e-6);
         }
 
+    /**
+     * Tests for the mean method - finds the mean value of an array
+     */
     @Test
     public void mean(){
         float[] arr1 = { 1f, 2f, 3f, 4f };
@@ -114,6 +125,9 @@ public class ArrayMethodsTest {
         assertEquals("[1.0, -9999.0, 3.0, 2.0], [true, false, true, true] -> 0", 0f, ArrayMethods.mean(arr17,arr18), 1e-6);
         }
 
+    /**
+     * Tests for the min method - finds the minimum value in an array
+     */
     @Test
     public void min(){
         float[] arr1 = { 1f, 2f, 3f, 4f };
@@ -129,9 +143,9 @@ public class ArrayMethodsTest {
         float [] arr6 = {-5f,10f,5f,0f};
         assertEquals("[-5 10 5 0] -> Float.NaN", Float.NaN, ArrayMethods.min(arr6,2,2), 1e-6);
 
-        /*float[] arr7 = { 1f, 2f, 3f, 4f };
-        boolean[] arr13 = {false,false,false,true};
-        assertEquals("[1 2 3 4] -> 3.0", 4f, ArrayMethods.min(arr7,arr13,2,4), 1e-6);
+        float[] arr7 = { 1f, 2f, 3f, 4f };
+        boolean[] arr13 = {false,false,true,true};
+        assertEquals("[1 2 3 4] -> 3.0", 3f, ArrayMethods.min(arr7,arr13,0,4), 1e-6);
         float [] arr8 = {1f, 2f, 3f, 4f};
         boolean[] arr14 = {false,false,false,false};
         assertEquals("[1 2 3 4] -> 0.0", Float.NaN, ArrayMethods.min(arr8,arr14), 1e-6);
@@ -146,9 +160,12 @@ public class ArrayMethodsTest {
         assertEquals("[-5 0 5 10] -> 0.0", 0f, ArrayMethods.min(arr11,arr17,0,2), 1e-6);
         float [] arr12 = {-5f,10f,5f,0f};
         boolean[] arr18 = {true,true,true,true};
-        assertEquals("[-5 10 5 0] -> Float.NaN", Float.NaN, ArrayMethods.min(arr12,arr18,2,2), 1e-6);*/
+        assertEquals("[-5 10 5 0] -> Float.NaN", Float.NaN, ArrayMethods.min(arr12,arr18,2,2), 1e-6);
         }
     
+    /**
+     * Tests for the max method - finds the maximum value in an array
+     */
     @Test
     public void max(){
         float[] arr1 = { 1f, 2f, 3f, 4f };
@@ -163,8 +180,30 @@ public class ArrayMethodsTest {
         assertEquals("[-5 0 5 10] -> 10", 10f, ArrayMethods.max(arr5), 1e-6);
         float [] arr6 = {10f, 20f, 30f};
         assertEquals("[10 20 30] -> 20f", 20f, ArrayMethods.max(arr6,0,2), 1e-6);
+
+        float[] arr7 = { 1f, 2f, 3f, 4f };
+        boolean[] arr13 = {false,false,true,true};
+        assertEquals("[1 2 3 4] -> 4.0", 4f, ArrayMethods.max(arr7,arr13,2,4), 1e-6);
+        float [] arr8 = {1f, 2f, 3f, 4f};
+        boolean[] arr14 = {false,false,false,false};
+        assertEquals("[1 2 3 4] -> 0.0", Float.NaN, ArrayMethods.max(arr8,arr14), 1e-6);
+        float [] arr9 = {};
+        boolean[] arr15 = {};
+        assertEquals("[] -> Float.Nan", Float.NaN, ArrayMethods.max(arr9,arr15), 1e-6);
+        float [] arr10 = {10f,20f,30f};
+        boolean[] arr16 = {true,false,true};
+        assertEquals("[10 20 30] -> 30.0", 30f, ArrayMethods.max(arr10,arr16), 1e-6);
+        float [] arr11 = {-5f, 0f, 5f, 10f};
+        boolean[] arr17 = {false,true,false,true};
+        assertEquals("[-5 0 5 10] -> 0.0", 0f, ArrayMethods.max(arr11,arr17,0,3), 1e-6);
+        float [] arr12 = {-5f,10f,5f,0f};
+        boolean[] arr18 = {true,true,true,true};
+        assertEquals("[-5 10 5 0] -> Float.NaN", Float.NaN, ArrayMethods.max(arr12,arr18,2,2), 1e-6);
         }
 
+    /**
+     * Tests for the isEqualTo method - finds if an element is equal to a given value
+     */
     @Test
     public void isEqualTo(){
         float[] arr1 = {1f,2f,3f,2f};
@@ -177,6 +216,9 @@ public class ArrayMethodsTest {
         assertArrayEquals("[10.0 20.0 30.0 40.0 50.0] -> [false, false, false, false, false]",new boolean[] {false,false,false,false,false},ArrayMethods.isEqualTo(arr4,100f));
     }
 
+    /**
+     * Tests for the logicalNot method - inverses the boolean array
+     */
     @Test
     public void logicalNot(){
         boolean[] arr1 = {false, true, false, false};
@@ -189,6 +231,9 @@ public class ArrayMethodsTest {
         assertArrayEquals("[false false false] -> [true, true, true]",new boolean[] {true, true, true},ArrayMethods.logicalNot(arr4));
     }
 
+    /**
+     * Tests for the isGreaterThan method - finds if an element is larger than a given number
+     */
     @Test
     public void isGreaterThan(){
         float[] arr1 = {1f,2f,3f,2.5f};
@@ -201,16 +246,22 @@ public class ArrayMethodsTest {
         assertArrayEquals("[10 2 8 3] -> [true, false, true,false]",new boolean[] {true, false, true,false},ArrayMethods.isGreaterThan(arr4,5f));
     }
 
+    /**
+     * Tests for the datesBetween method - finds if a string is between a range of dates
+     */
     @Test
     public void datesBetween(){
         String[] arr1 = {"20230101","20230214","20230704"};
         assertArrayEquals("[20230101,20230214,20230704] -> [false true false]",new boolean[] {false, true, false},ArrayMethods.datesBetween(arr1,"20230201", "20230601"));
         String[] arr2 = {"20200605","202201014","20210303"};
         assertArrayEquals("[20200605,202201014,20210303] -> [true false true]",new boolean[] {true, false, true},ArrayMethods.datesBetween(arr2,"20200600", "202103010"));
-        String[] arr3 = {"201509025","20040716","20200914"};
-        assertArrayEquals("[201509025,20040716,20200914] -> [false false false]",new boolean[] {false, false, false},ArrayMethods.datesBetween(arr3,"202309025", "202309025"));
+        String[] arr3 = {"201509026","20040716","20200914"};
+        assertArrayEquals("[201509026,20040716,20200914] -> [false false false]",new boolean[] {false, false, false},ArrayMethods.datesBetween(arr3,"202309025", "202309025"));
     }
 
+    /**
+     * Test for the logicalAnd Method - makes a true element if both arrays have true, otherwise makes a false element
+     */
     @Test
     public void logicalAnd(){
         boolean[] arr1 = {false, true, true, false};
@@ -225,6 +276,9 @@ public class ArrayMethodsTest {
 
     }
 
+    /**
+     * Tests for the count method - counts the amount of true elements
+     */
     @Test
     public void count(){
         boolean[] arr1 = {false, true, true, false, true};
@@ -235,16 +289,22 @@ public class ArrayMethodsTest {
         assertEquals("[false, false, false, false, false] -> 0", 0, ArrayMethods.count(arr3), 1e-6);
     }
 
+    /**
+     * Tests for the findFirst method -  finds the index of the first true element
+     */
     @Test
     public void findFirst(){
         boolean[] arr1 = {false, false, true, false, true};
-        assertEquals("[false, false, true, false, true] -> 2", 2f, ArrayMethods.findFirst(arr1), 1e-6);
+        assertEquals("[false, false, true, false, true] -> 2", 2, ArrayMethods.findFirst(arr1), 1e-6);
         boolean[] arr2 = {false, false, false};
-        assertEquals("[false, false, false] -> -1", -1f, ArrayMethods.findFirst(arr2), 1e-6);
+        assertEquals("[false, false, false] -> -1", -1, ArrayMethods.findFirst(arr2), 1e-6);
         boolean[] arr3 = {false, true, true};
-        assertEquals("[false, true, true] -> 2", 1f, ArrayMethods.findFirst(arr3), 1e-6);
+        assertEquals("[false, true, true] -> 2", 1, ArrayMethods.findFirst(arr3), 1e-6);
     }
 
+    /**
+     * Tests for the findTest method - finds the indexes of true elements
+     */
     @Test
     public void findTest(){
         boolean[] arr1 = {false, true, true, false, true};

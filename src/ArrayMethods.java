@@ -1,5 +1,13 @@
-
+/***
+ * Class of all the Methods used which have to do with comparison, or mathmatical functions
+ */
 public class ArrayMethods{
+    
+    /**
+     * Takes an input array and adds all of the elements
+     * @param arr - array being input with values which are added together
+     * @return total - total sum of the elements in the array
+     */
     public static float wholeArraySum(float[] arr) {
         float total = 0f;
         for (int i =0;i<arr.length;i++){
@@ -8,6 +16,13 @@ public class ArrayMethods{
             return total;
         }
 
+    /**
+     * Takes an input array and adds all of the elements within the range given by lo and hi
+     * @param arr array being input with values which are added together
+     * @param lo the lowest value for range
+     * @param hi the highest value for range
+     * @return total - total sum of the elements in the array within the range
+     */
     public static float sum(float[] arr, int lo, int hi){
             float total =0f;
             for(int i = lo;i<=hi-1;i++){
@@ -15,7 +30,11 @@ public class ArrayMethods{
             }
             return total;
         }
-
+    /**
+     * Adds all of the elemts in the array
+     * @param arr array being input with values which are added together
+     * @return total - total sum of the elements in the array
+     */
     public static float sum(float[] arr){
         float total =0f;
         for(int i = 0;i<=arr.length-1;i++){
@@ -23,7 +42,12 @@ public class ArrayMethods{
         }
         return total;
     }
-
+    /**
+     * Takes an array, and sums up values that which correlate to true in the ind array
+     * @param arr - array being input with values which are added together
+     * @param ind - an array of boolean elements
+     * @return total - total sum of the elements
+     */
     public static float sum(float[] arr,boolean[] ind){
         float total =0f;
         for(int i = 0;i<=arr.length-1;i++){
@@ -33,7 +57,14 @@ public class ArrayMethods{
         }
         return total;
     }
-
+    /**
+     * Sums up the numbers in an array within a given range and dependant on indicator variables
+     * @param arr an array with floats
+     * @param ind an array of boolean elements
+     * @param lo the lowest value for range
+     * @param hi - the highest value for range
+     * @return total - total sum of the elements
+     */
     public static float sum(float[] arr,boolean[] ind,int lo,int hi){
         float total =0f;
         for(int i = lo;i<=hi-1;i++){
@@ -43,7 +74,13 @@ public class ArrayMethods{
         }
         return total;
     }
-
+    /**
+     * Finds the mean of a given array within a certain range
+     * @param arr a float array
+     * @param lo the lowest value in the range
+     * @param hi the highest value for range
+     * @return the mean of the given array
+     */
     public static float mean(float[] arr, int lo, int hi){
         float total =0f;
         float num =0;
@@ -58,7 +95,11 @@ public class ArrayMethods{
         }
 
     }
-
+    /**
+     * Finds the mean of a given array
+     * @param arr array with floats
+     * @return mean of a given array
+     */
     public static float mean(float[] arr){
         float total =0f;
         float num =0;
@@ -72,7 +113,12 @@ public class ArrayMethods{
             return total/num;
         }
     }
-
+    /**
+     * Fidns the mean of a given array dependant on indicator variables
+     * @param arr float array with values
+     * @param arr2 boolean array with indicator variables
+     * @return the mean of the array 
+     */
     public static float mean(float[] arr, boolean[] arr2){
         float total =0f;
         float num =0;
@@ -82,15 +128,21 @@ public class ArrayMethods{
                 num+=1;
             }
         }
-
         if(num == 0){
             return 0f;
         }else{
             return total/num;
         }
-
     }
 
+    /**
+     * Finds the mean of an array within a given range and using indicator variables
+     * @param arr float array with values
+     * @param arr2 boolean array with indicator variables
+     * @param lothe lowest value in the range
+     * @param hi the highest value for range
+     * @return mean of a given array
+     */
     public static float mean(float[] arr, boolean[] arr2, int lo, int hi){
         float total =0f;
         float num =0;
@@ -100,7 +152,6 @@ public class ArrayMethods{
                 num+=1;
             }
         }
-
         if(num == 0){
             System.out.print(0.0);
             return 0f;
@@ -110,6 +161,13 @@ public class ArrayMethods{
 
     }
 
+    /**
+     * Finds the minimum value in an array within a given range
+     * @param arr float array with numerical values
+     * @param lo the lowest value in the range
+     * @param hi the highest value for range
+     * @return minimum value in the array
+     */
     public static float min(float[] arr, int lo, int hi){
         float min ;
         if( hi == lo){
@@ -127,7 +185,11 @@ public class ArrayMethods{
         }
         return min;
     }
-
+    /**
+     * Finds the minimum value of a given array
+     * @param arr - array with numercal values
+     * @return the minimum value
+     */
     public static float min(float[] arr){
         float min;
         if(arr.length == 0 ){
@@ -142,64 +204,86 @@ public class ArrayMethods{
         }
         return min;
     }
-
-    /*public static float min(float[] arr, boolean[] arr2){
+    /**
+     * Finds the minimum value of an array and uses indicator variables
+     * @param arr float array with numerical values
+     * @param arr2 boolean array with indicator variables
+     * @return the minimum value in array
+     */
+    public static float min(float[] arr, boolean[] arr2){
         float min ;
-        int count =0;
+        float count =0;
         for(int i=0;i<=arr.length-1;i++){
             if(arr2[i]==true){
                 count++;
             }
         }
+
         if(count == 0){
+            System.out.println("Float.NaN");
             return Float.NaN;
         }
         
         if( arr.length == 0){
             return Float.NaN;
         }else{
-            min = arr[0];
+            min = 100000000;
         }
-        
+
         for(int i =0; i<=arr.length-1;i++){
-            if(arr2[i]==true && arr[i]<min){
-                min = arr[i];
+            if(arr2[i] ==true){
+                if(min>arr[i]){
+                    min = arr[i];
+                }
             }
         }
-        System.out.print(min);
-        return min;
+        return min; 
     }
-
-    public static float min(float[] arr, boolean[] arr2, int lo, int hi){
-        float min;
-        int count =0;
-        if( hi == lo){
-            return Float.NaN;
-        }
-        for(int i=lo;i<=hi-1;i++){
+    /**
+     * Finds the min number in an array between a given range of numbers and indicator variables
+     * @param arr float array with numerical values
+     * @param arr2 - boolean array with indicator variables
+     * @param lo the lowest value in the range
+     * @param hi the highest value for range
+     * @return min value within an array
+     */
+    public static float min(float[] arr, boolean[] arr2,int lo,int hi){
+        float min ;
+        float count =0;
+        for(int i=0;i<=arr.length-1;i++){
             if(arr2[i]==true){
                 count++;
             }
+        }
+         if( hi == lo){
+            return Float.NaN;
         }
         if(count == 0){
             return Float.NaN;
         }
         if(arr.length == 0){
-            min = Float.NaN;
+            return Float.NaN;
         }else{
-            min = arr[lo];
+            min = 100000000;
         }
-        for(int i = lo; i<=hi-1;i++){
-            if(arr2[i] == true){
-            if(arr[i]<min){
-                min = arr[i];
+        System.out.println(min);
+        for(int i =lo; i<=hi-1;i++){
+            if(arr2[i] ==true){
+                if(min>arr[i]){
+                    min = arr[i];
+                }
             }
-        }
         }
         System.out.print(min);
         return min;
-    } */
-
+    }
+    /**
+     * Finds the maximum value in an awway within a given range
+     * @param arr float array with numerical values
+     * @param lo the lowest value in the range
+     * @param hi the highest value for range
+     * @return the maximum value
+     */
     public static float max(float[] arr, int lo, int hi){
         float max;
         if( hi == lo){
@@ -218,7 +302,11 @@ public class ArrayMethods{
         }
         return max;
     }
-
+    /**
+     * Finds the max value in an array
+     * @param arr float array with numerical values
+     * @return the maximum value
+     */
     public static float max(float[] arr){
         float max = 0;
         if(arr.length == 0){
@@ -233,7 +321,85 @@ public class ArrayMethods{
         }
         return max;
     }
+    /**
+     * Finds the max value in an array with indicator vaiables
+     * @param arr float array with numerical values
+     * @param arr2 boolean array with indicator variables
+     * @return the max value
+     */
+    public static float max(float[] arr,boolean[] arr2){
+        float max ;
+        float count =0;
+        for(int i=0;i<=arr.length-1;i++){
+            if(arr2[i]==true){
+                count++;
+            }
+        }
+        
+        if(count == 0){
+            System.out.println("Float.NaN");
+            return Float.NaN;
+        }
+        
+        if( arr.length == 0){
+            return Float.NaN;
+        }else{
+            max = 0;
+        }
 
+        for(int i =0; i<=arr.length-1;i++){
+            if(arr2[i] ==true){
+                if(max<arr[i]){
+                    max = arr[i];
+                }
+            }
+        }
+        return max; 
+    }
+    /**
+     * Finds the max value in an array betwwen a given range while using indicator variables
+     * @param arr float array with numerical values
+     * @param arr2 boolean array with indicator variables
+     * @param lo the lowest value in the range
+     * @param hi the highest value for range
+     * @return the max value
+     */
+    public static float max(float[] arr, boolean[] arr2,int lo,int hi){
+        float max ;
+        float count =0;
+        for(int i=0;i<=arr.length-1;i++){
+            if(arr2[i]==true){
+                count++;
+            }
+        }
+         if( hi == lo){
+            return Float.NaN;
+        }
+        if(count == 0){
+            return Float.NaN;
+        }
+        if(arr.length == 0){
+            return Float.NaN;
+        }else{
+            max = 0;
+        }
+        System.out.println(max);
+        for(int i =lo; i<=hi-1;i++){
+            if(arr2[i] ==true){
+                if(max<arr[i]){
+                    max = arr[i];
+                }
+            }
+        }
+        System.out.print(max);
+        return max;
+    }
+    /**
+     * Finds if elements in an array are equal to a given number
+     * @param arr float array with numerical values
+     * @param num the number being compared to
+     * @return a boolean array where true meanas it is the same value and false is that they are not the same value
+     */
     public static boolean[] isEqualTo(float[] arr, float num){
         boolean[] equalArray = new boolean[arr.length];
         for(int i =0; i<=arr.length-1;i++){
@@ -245,7 +411,11 @@ public class ArrayMethods{
         }
         return equalArray;
     }
-
+    /**
+     * Takes a boolean array and returns an inverse of that array
+     * @param arr boolean array 
+     * @return boolean array that is the opposite of arr
+     */
     public static boolean[] logicalNot(boolean arr[]){
         boolean[] logicArray = new boolean[arr.length];
         for(int i =0; i<=arr.length-1;i++){
@@ -258,7 +428,12 @@ public class ArrayMethods{
         return logicArray;
     }
 
-
+    /**
+     * Finds if elements in an array are greater than a given number
+     * @param arr float array with numerical values
+     * @param num the given number
+     * @return a boolean array, true when the element is greater than the num and false otherwise
+     */
     public static boolean[] isGreaterThan(float arr[], float num){
         boolean[] greaterArray = new boolean[arr.length];
         for(int i =0; i<=arr.length-1;i++){
@@ -270,7 +445,13 @@ public class ArrayMethods{
         }
         return greaterArray;
     }
-
+    /**
+     * Finds whether elements in a string array are in between two given dates
+     * @param arr a string array which has dates
+     * @param lo the lowest value in the range
+     * @param hi the highest value in the range
+     * @return a boolean array, where true is that the string element goes between the lo and hi element and false otherwise
+     */
     public static boolean[] datesBetween(String arr[], String lo,String hi){
         boolean[] betweenArray = new boolean[arr.length];
         float[] betweenArrayFloat = new float[arr.length];
@@ -282,7 +463,7 @@ public class ArrayMethods{
         }
 
         for(int i = 0; i<=betweenArrayFloat.length-1;i++){
-            if(betweenArrayFloat[i]>newLo && betweenArrayFloat[i]<newHi){
+            if(betweenArrayFloat[i]>=newLo && betweenArrayFloat[i]<=newHi){
                 betweenArray[i] = true;
             }else{
                 betweenArray[i] = false;
@@ -290,7 +471,12 @@ public class ArrayMethods{
         }
         return betweenArray;
     }
-
+    /**
+     * Gets an array which has a false element if either of the elements inputed have a false element at that index, otherwise has true at that index
+     * @param arr a boolean array
+     * @param arr2 a boolean array
+     * @return a boolean array which has a true element if both arrays have true in that index, otherwise has a false element
+     */
     public static boolean[] logicalAnd(boolean[] arr, boolean[] arr2){
         boolean[] logicalAndArray = new boolean[arr.length];
         for(int i =0; i<=arr.length-1;i++){
@@ -302,7 +488,11 @@ public class ArrayMethods{
         }
         return logicalAndArray;
     }
-
+    /**
+     * Counts the amount of true elements in a boolean array
+     * @param arr a boolean array
+     * @return the amount of true elements in a boolean array
+     */
     public static int count(boolean[] arr){
         int num =0;
         for(int i =0; i<=arr.length-1;i++){
@@ -312,9 +502,13 @@ public class ArrayMethods{
         }
         return num;
     }
-
-    public static float findFirst(boolean[] arr){
-        float num =-1;
+    /**
+     * Finds the first index of a true element in a boolean array
+     * @param arr a boolean array
+     * @return the first index of a true element
+     */
+    public static int findFirst(boolean[] arr){
+        int num =-1;
         for(int i =0; i<=arr.length-1;i++){
             if(arr[i] == true){
                 num =i;
@@ -323,7 +517,11 @@ public class ArrayMethods{
         }
         return num;
     }
-
+    /**
+     * Finds all of the indexes of the true elements in a boolean array
+     * @param arr - a boolean array
+     * @return an array with the indexs of the true elements in the boolean array
+     */
     public static int[] find(boolean[] arr){
         int num =0;
         for(int i =0; i<=arr.length-1;i++){
@@ -346,7 +544,8 @@ public class ArrayMethods{
 
     public static void main(String[] arg){
         float [] arr8 = {1f, 2f, 3f, 4f};
-        boolean[] arr14 = {false,false,false,false};
-       // min(arr8,arr14,2,4);
+        boolean[] arr14 = {false,false,true,true};
+        min(arr8,arr14,0,4);
+
     }
 }
